@@ -19,112 +19,174 @@
 <!-- ==================== 中文版 ==================== -->
 
 <h1>MindPrints 隐私政策</h1>
-<p>最后更新：2026 年 3 月</p>
+<p>最后更新：2026 年 4 月</p>
 
-<p>MindPrints 由个人开发者开发。本政策说明本应用如何获取和处理您的数据。<strong>我们不运营任何服务器，也不收集您的任何数据。</strong>所有信息均存储在您的设备本地。</p>
+<p>MindPrints 由个人开发者开发。本政策说明本应用如何访问、处理和存储您的数据。<strong>我们不运营自己的应用服务器，也不会在我们的服务器上收集或存储您的截图、文字内容或 API Key。</strong>除非您主动启用并使用第三方 AI 服务，否则您的数据默认保存在您的设备本地。</p>
 
 <h2>1. 相册访问</h2>
-<p>本应用会请求读取您的相册，仅用于导入您主动选择的截图。我们不会读取、上传或访问您未选择的任何照片。</p>
-<p>导入完成后，您可以选择删除相册中的原始截图。删除操作仅针对您在导入流程中明确选中的图片，由系统 Photos API 执行。</p>
+<p>MindPrints 会请求访问您的相册，用于以下本地功能：</p>
+<ul>
+  <li>导入您主动选择的截图</li>
+  <li>扫描您设备中的截图，以便按时间批量导入、整理和去重</li>
+  <li>在您明确确认时，从系统相册删除对应原图</li>
+</ul>
+<p>我们不会把您的照片上传到我们的服务器。相册访问仅用于设备本地的导入、识别、整理和删除操作。</p>
 
 <h2>2. 麦克风与语音识别</h2>
-<p>Archive 搜索页提供语音输入功能。使用时，本应用会请求麦克风权限，并使用 Apple 系统的语音识别框架（SFSpeechRecognizer）将语音转为文字。语音数据由 Apple 处理，适用 Apple 隐私政策。我们不保留任何录音。</p>
+<p>Archive 搜索页提供语音输入功能。使用时，本应用会请求麦克风权限，并使用 Apple 的语音识别框架（SFSpeechRecognizer）将语音转为文字。语音数据由 Apple 处理，并受 Apple 隐私政策约束。我们不保存录音。</p>
 
 <h2>3. 本地通知</h2>
-<p>本应用发送以下类型的本地通知：</p>
+<p>本应用可能发送以下类型的本地通知：</p>
 <ul>
-  <li>「可以试试」提醒：您离开应用约 90 分钟后，提示回顾某条待跟进的屏踪</li>
-  <li>每日定时提醒：每天 1–2 次，提示关注某个主题</li>
-  <li>周洞察生成完成通知</li>
+  <li>待跟进内容的回看提醒</li>
+  <li>每日提醒</li>
+  <li>周洞察或整理结果完成提醒</li>
 </ul>
-<p>所有通知完全在设备本地调度，不经过任何服务器。您可随时在系统设置中关闭通知。</p>
+<p>所有通知均由设备本地调度，不经过我们的服务器。您可随时在 iOS 设置中关闭通知权限。</p>
 
-<h2>4. 本地 OCR 识别</h2>
-<p>导入截图时，本应用使用 Apple 的 Vision 框架在设备本地对图片进行文字识别（OCR），用于过滤验证码、取件码、密码等敏感临时内容，并生成可搜索的文字索引。OCR 全程在本地运行，识别内容不会上传至任何外部服务。</p>
-
-<h2>5. AI 功能与 OpenAI</h2>
-<p>本应用的 AI 搜索、摘要生成、洞察报告等功能需要您<strong>自行提供 OpenAI API Key</strong>。配置后，相关截图的图像和文字内容将通过您的 API Key 发送至 OpenAI 处理。</p>
-<p>我们对通过您的 API Key 发送至 OpenAI 的数据不做任何收集或转存。OpenAI 的隐私政策适用于该过程：<a href="https://openai.com/privacy">openai.com/privacy</a></p>
-<p>未配置 API Key 时，所有功能均在本地运行，不涉及任何外部网络请求。</p>
-
-<h2>6. 数据存储</h2>
-<p>本应用将以下数据存储在您的设备本地：</p>
+<h2>4. 本地 OCR 与截图分析</h2>
+<p>导入或整理截图时，本应用会使用 Apple 的 Vision 框架在设备本地执行 OCR（文字识别）和基础截图分析，用于：</p>
 <ul>
-  <li>导入的截图图片文件（存储于应用沙盒 Documents 目录）</li>
-  <li>备注、标签、AI 生成的摘要与洞察（JSON 格式，存储于本地）</li>
-  <li>应用设置与偏好</li>
-  <li>Widget 所需的共享数据（通过 App Group 存储于设备本地）</li>
-  <li>OpenAI API Key（使用系统 Keychain 加密存储）</li>
+  <li>建立可搜索的文字索引</li>
+  <li>识别验证码、取件码、付款码、密码等临时或敏感内容</li>
+  <li>辅助截图分组、去重和清理建议</li>
 </ul>
-<p>以上所有数据仅存在于您的设备，我们无法访问。</p>
+<p>这些处理默认在设备本地完成，不会上传到我们的服务器。</p>
 
-<h2>7. 数据删除</h2>
-<p>在应用内删除任意屏踪，数据将立即从设备移除。卸载本应用将删除所有本地数据（系统 Keychain 条目除外，可在设置中手动清除）。</p>
+<h2>5. AI 功能与第三方 AI 服务</h2>
+<p>MindPrints 的部分 AI 功能（如搜索、摘要、洞察、分类建议、导入整理建议等）需要您<strong>自行提供第三方 AI 服务的 API Key</strong>。目前应用支持 OpenAI、Qwen 和 DeepSeek；您也可以只配置其中一个。</p>
+<p>当您启用这些功能时，相关截图内容可能会被发送到您所配置的第三方 AI 服务，用于生成结果。发送的数据可能包括：</p>
+<ul>
+  <li>截图图像</li>
+  <li>OCR 识别出的文字</li>
+  <li>您的备注、标签、待办和摘要内容</li>
+  <li>为完成分类、搜索或洞察所需的结构化上下文</li>
+</ul>
+<p>这些数据是通过您的 API Key 直接发送到相应第三方服务处理的。<strong>我们不会在自己的服务器上接收、转存或分析这些数据。</strong></p>
+<p>相应第三方服务的隐私政策适用于该处理过程，例如：</p>
+<ul>
+  <li><a href="https://openai.com/privacy">OpenAI Privacy Policy</a></li>
+  <li><a href="https://www.alibabacloud.com/help/en/dashscope/">Qwen / DashScope documentation</a></li>
+  <li><a href="https://platform.deepseek.com/">DeepSeek platform information</a></li>
+</ul>
+<p>未配置 API Key 时，应用不会调用这些第三方 AI 服务。</p>
 
-<h2>8. 儿童隐私</h2>
+<h2>6. API Key 存储</h2>
+<p>您输入的 AI API Key 仅存储在您的设备本地，并使用 iOS 系统 Keychain 进行加密保存。我们无法访问您的 API Key。</p>
+
+<h2>7. 本地数据存储</h2>
+<p>本应用会在您的设备本地存储以下数据：</p>
+<ul>
+  <li>导入后的截图图片文件</li>
+  <li>截图的 OCR 文字、备注、标签、摘要、洞察与整理状态</li>
+  <li>主题（folders）与相关组织信息</li>
+  <li>通知、语言、界面与使用偏好设置</li>
+  <li>Widget 所需的本地共享数据（通过 App Group）</li>
+  <li>本地缓存的 AI 推荐结果与整理状态</li>
+  <li>您提供的 AI API Key（通过系统 Keychain）</li>
+</ul>
+<p>上述数据默认只保存在您的设备上。</p>
+
+<h2>8. 数据删除</h2>
+<p>您可以在应用内删除单条或批量删除屏踪记录。删除后，相应本地数据会从设备移除。</p>
+<p>对于带有相册来源的截图，您也可以选择同时删除系统相册中的原图。该删除由 iOS Photos API 执行，并需经过系统确认。</p>
+<p>卸载本应用通常会删除应用沙盒中的本地数据；Keychain 中保存的 API Key 可能在卸载后仍暂时保留，您可在重新安装后清除或覆盖。</p>
+
+<h2>9. 儿童隐私</h2>
 <p>本应用不面向 13 岁以下儿童，也不会有意收集儿童个人信息。</p>
 
-<h2>9. 政策变更</h2>
-<p>如本政策发生重大变更，我们将通过应用更新日志告知用户，并更新本页面顶部的日期。</p>
+<h2>10. 政策变更</h2>
+<p>如本政策发生重大更新，我们将通过应用更新或本页面顶部日期进行说明。</p>
 
-<h2>10. 联系方式</h2>
-<p>如有疑问，请通过 App Store 页面的开发者联系方式与我们联系。</p>
+<h2>11. 联系方式</h2>
+<p>如有任何问题，请通过 App Store 页面中的开发者联系方式与我们联系。</p>
 
 <hr class="lang-divider">
 
 <!-- ==================== English Version ==================== -->
 
 <h1>MindPrints Privacy Policy</h1>
-<p>Last updated: March 2026</p>
+<p>Last updated: April 2026</p>
 
-<p>MindPrints is developed by an independent developer. This policy explains how the app accesses and handles your data. <strong>We do not operate any servers and do not collect any of your data.</strong> All information is stored locally on your device.</p>
+<p>MindPrints is developed by an independent developer. This policy explains how the app accesses, processes, and stores your data. <strong>We do not run our own application servers and do not collect or store your screenshots, content, or API keys on our servers.</strong> Unless you explicitly enable third-party AI features, your data stays on your device by default.</p>
 
 <h2>1. Photo Library Access</h2>
-<p>The app requests access to your photo library solely to import screenshots you explicitly select. We do not read, upload, or access any photos you have not chosen.</p>
-<p>After import, you may optionally delete the original screenshots from your photo library. Deletion applies only to images you explicitly selected during the import flow, executed via the system Photos API.</p>
+<p>MindPrints requests access to your photo library for the following on-device functions:</p>
+<ul>
+  <li>Importing screenshots you explicitly choose</li>
+  <li>Scanning screenshots on your device so you can batch import, organize, and deduplicate them by time</li>
+  <li>Deleting original photos from the system Photos library when you explicitly confirm that action</li>
+</ul>
+<p>We do not upload your photos to our servers. Photo library access is used only for on-device import, recognition, organization, and deletion workflows.</p>
 
 <h2>2. Microphone & Speech Recognition</h2>
-<p>The Archive screen offers a voice input feature for search. When used, the app requests microphone access and uses Apple's speech recognition framework (SFSpeechRecognizer) to transcribe speech to text. Audio is processed by Apple and subject to Apple's privacy policy. We do not retain any audio recordings.</p>
+<p>The Archive screen supports voice input for search. When used, the app requests microphone access and uses Apple’s speech recognition framework (SFSpeechRecognizer) to transcribe speech to text. Audio is processed by Apple and is subject to Apple’s privacy policy. We do not store audio recordings.</p>
 
 <h2>3. Local Notifications</h2>
 <p>The app may send the following types of local notifications:</p>
 <ul>
-  <li><em>Resurface nudges</em>: sent ~90 minutes after you leave the app, prompting you to revisit a pending item</li>
-  <li><em>Daily reminders</em>: 1–2 per day, tied to specific time windows</li>
-  <li><em>Weekly insight ready</em>: notifies when your weekly reflection has been generated</li>
+  <li>Resurface reminders for items you may want to revisit</li>
+  <li>Daily reminders</li>
+  <li>Weekly insight or organization-complete notifications</li>
 </ul>
-<p>All notifications are scheduled entirely on-device and do not pass through any server. You can disable them at any time in iOS Settings.</p>
+<p>All notifications are scheduled entirely on-device and do not pass through our servers. You can disable notifications at any time in iOS Settings.</p>
 
-<h2>4. On-Device OCR</h2>
-<p>When importing screenshots, the app uses Apple's Vision framework to perform optical character recognition (OCR) locally on your device. This is used to filter out sensitive temporary content (e.g. verification codes, passwords) and to build a searchable text index. OCR runs entirely on-device; recognized text is never uploaded to any external service.</p>
+<h2>4. On-Device OCR & Screenshot Analysis</h2>
+<p>When importing or organizing screenshots, the app uses Apple’s Vision framework to perform OCR and basic screenshot analysis on-device. This is used to:</p>
+<ul>
+  <li>Build a searchable text index</li>
+  <li>Detect temporary or sensitive content such as verification codes, pickup codes, payment codes, or passwords</li>
+  <li>Support grouping, deduplication, and cleanup suggestions</li>
+</ul>
+<p>These processes run on-device by default and are not sent to our servers.</p>
 
-<h2>5. AI Features & OpenAI</h2>
-<p>AI-powered search, summarization, and weekly insights require you to <strong>provide your own OpenAI API Key</strong>. Once configured, relevant screenshot content (images and extracted text) is sent to OpenAI via your API Key for processing.</p>
-<p>We do not collect, store, or relay any data sent to OpenAI through your API Key. OpenAI's privacy policy governs that processing: <a href="https://openai.com/privacy">openai.com/privacy</a></p>
-<p>If no API Key is configured, all features run locally with no external network requests.</p>
+<h2>5. AI Features & Third-Party AI Services</h2>
+<p>Some AI-powered features in MindPrints, such as search, summaries, insights, classification suggestions, and import organization suggestions, require you to <strong>provide your own third-party AI API key</strong>. The app currently supports OpenAI, Qwen, and DeepSeek, and you may configure one or more of them.</p>
+<p>When you enable those features, relevant screenshot content may be sent to the third-party AI service you configured in order to generate a result. This may include:</p>
+<ul>
+  <li>Screenshot images</li>
+  <li>OCR-extracted text</li>
+  <li>Your notes, tags, todos, and summaries</li>
+  <li>Structured context needed to complete classification, search, or insight generation</li>
+</ul>
+<p>That data is sent directly to the corresponding third-party service using your API key. <strong>We do not receive, relay through our own servers, or store that data on our servers.</strong></p>
+<p>The relevant third-party provider’s privacy policy applies to that processing, for example:</p>
+<ul>
+  <li><a href="https://openai.com/privacy">OpenAI Privacy Policy</a></li>
+  <li><a href="https://www.alibabacloud.com/help/en/dashscope/">Qwen / DashScope documentation</a></li>
+  <li><a href="https://platform.deepseek.com/">DeepSeek platform information</a></li>
+</ul>
+<p>If no API key is configured, the app does not call these third-party AI services.</p>
 
-<h2>6. Data Storage</h2>
+<h2>6. API Key Storage</h2>
+<p>Your AI API keys are stored only on your device and are encrypted using the iOS system Keychain. We cannot access your API keys.</p>
+
+<h2>7. Local Data Storage</h2>
 <p>The app stores the following data locally on your device:</p>
 <ul>
-  <li>Imported screenshot image files (in the app's sandboxed Documents directory)</li>
-  <li>Notes, tags, and AI-generated summaries and insights (stored as local JSON)</li>
-  <li>App settings and preferences</li>
-  <li>Widget data shared via App Group (stored locally on-device)</li>
-  <li>Your OpenAI API Key (encrypted in the system Keychain)</li>
+  <li>Imported screenshot image files</li>
+  <li>OCR text, notes, tags, summaries, insights, and organization state</li>
+  <li>Folders and related organization data</li>
+  <li>Notification, language, interface, and preference settings</li>
+  <li>Widget data shared locally via App Group</li>
+  <li>Locally cached AI recommendation and organization state</li>
+  <li>Your AI API keys in the system Keychain</li>
 </ul>
-<p>All of the above exists only on your device. We have no ability to access it.</p>
+<p>All of the above is stored locally on your device by default.</p>
 
-<h2>7. Data Deletion</h2>
-<p>Deleting any item within the app removes it from your device immediately. Uninstalling the app removes all local data (Keychain entries may persist and can be cleared manually via Settings).</p>
+<h2>8. Data Deletion</h2>
+<p>You can delete individual or multiple records from within the app. Once deleted, the corresponding local data is removed from your device.</p>
+<p>For screenshots that originated from your photo library, you may also choose to delete the original photo from the system Photos library. That deletion is performed through the iOS Photos API and requires system confirmation.</p>
+<p>Uninstalling the app will generally remove app sandbox data. API keys stored in Keychain may temporarily persist after uninstall and can later be cleared or overwritten.</p>
 
-<h2>8. Children's Privacy</h2>
-<p>MindPrints is not directed at children under 13 and does not knowingly collect personal information from children.</p>
+<h2>9. Children’s Privacy</h2>
+<p>MindPrints is not directed to children under 13 and does not knowingly collect personal information from children.</p>
 
-<h2>9. Changes to This Policy</h2>
-<p>If we make material changes to this policy, we will notify users through app release notes and update the date at the top of this page.</p>
+<h2>10. Changes to This Policy</h2>
+<p>If we make material updates to this policy, we will reflect them through app updates or by changing the date at the top of this page.</p>
 
-<h2>10. Contact</h2>
-<p>For questions or concerns, please reach out via the developer contact on the App Store listing.</p>
+<h2>11. Contact</h2>
+<p>If you have any questions, please contact us through the developer contact listed on the App Store page.</p>
 
 <footer>© 2026 MindPrints. All rights reserved.</footer>
 
